@@ -3,11 +3,11 @@ package domain
 import "github.com/maxvidenin/banking/errs"
 
 type Customer struct {
-	Id          int64  `json:"id db:"customer_id"`
+	Id          int64  `json:"id" db:"customer_id"`
 	Name        string `json:"name"` 
 	City        string `json:"city"` 
 	Zipcode     string `json:"zipcode"`
-	DateOfBirth string `json:"date_of_birth"`
+	DateOfBirth string `json:"date_of_birth" db:"date_of_birth"`
 	Status      string `json:"status"`
 }
 
