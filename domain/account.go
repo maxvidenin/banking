@@ -1,6 +1,9 @@
 package domain
 
-import "github.com/maxvidenin/banking/errs"
+import (
+	"github.com/maxvidenin/banking/dto"
+	"github.com/maxvidenin/banking/errs"
+)
 
 type Account struct {
 	AccountId   string
@@ -13,4 +16,13 @@ type Account struct {
 
 type AccountRepository interface {
 	Save(Account) (*Account, *errs.AppError)
+}
+
+func (a Account) ToNewAccountResponseDto() dto.NewAccountResponse {
+	return dto.NewAccountResponse{
+		AccountId:   a.AccountId,
+		CustomerId:  a.CustomerId,
+		AccountType: a.AccountType,
+		Amount:      a.Amount,
+	}
 }

@@ -17,7 +17,7 @@ func (ar AccountRepositoryDb) Save(a Account) (*Account, *errs.AppError) {
 	// res, err := ar.client.NamedExec(sqlInsert, a)
 
 	sqlInsert2 := "INSERT INTO accounts (customer_id, opening_date, account_type, amount, status) VALUES (?, ?, ?, ?, ?)"
-	res, err := ar.client.Exec(sqlInsert2, a.AccountId, a.OpeningDate, a.AccountType, a.Amount, a.Status)
+	res, err := ar.client.Exec(sqlInsert2, a.CustomerId, a.OpeningDate, a.AccountType, a.Amount, a.Status)
 
 	if err != nil {
 		logger.Error(err.Error())
