@@ -2,18 +2,12 @@ package domain
 
 import "github.com/maxvidenin/banking/dto"
 
-const WITHDRAWAL = "withdrawal"
-
 type Transaction struct {
 	TransactionId   string  `db:"transaction_id"`
 	TransactionType string  `db:"transaction_type"`
 	Amount          float64 `db:"amount"`
 	AccountId       string  `db:"account_id"`
 	TransactionDate string  `db:"transaction_date"`
-}
-
-func (t Transaction) IsWithdrawal() bool {
-	return t.TransactionType == WITHDRAWAL
 }
 
 func (t Transaction) ToDto() dto.TransactionResponse {
