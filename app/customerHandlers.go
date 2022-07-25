@@ -12,6 +12,7 @@ type CustomerHandlers struct {
 	service service.CustomerService
 }
 
+//go:generate mockgen -destination=../mocks/service/mockCustomerService.go -package=service github.com/maxvidenin/banking/service CustomerService
 func (ch *CustomerHandlers) getAllCustomers(w http.ResponseWriter, r *http.Request) {
 	status := r.URL.Query().Get("status")
 	customers, err := ch.service.GetAllCustomers(status)

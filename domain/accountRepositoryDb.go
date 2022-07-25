@@ -53,7 +53,7 @@ func (ar AccountRepositoryDb) SaveTransaction(t Transaction) (*Transaction, *err
 	res, _ := tx.NamedExec(sqlInsert, t)
 
 	var sqlUpdate string
-	if t.IsWithdrawal() {
+	if t.TransactionType == "withdrawal" {
 		sqlUpdate = "UPDATE accounts SET amount = amount - :amount WHERE account_id = :account_id"
 	} else {
 		sqlUpdate = "UPDATE accounts SET amount = amount + :amount WHERE account_id = :account_id"
