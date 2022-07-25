@@ -18,24 +18,18 @@ type DefaultAccountService struct {
 }
 
 func (s DefaultAccountService) NewAccount(req dto.NewAccountRequest) (*dto.NewAccountResponse, *errs.AppError) {
-	err := req.Validate()
-	if err != nil {
+	if err := req.Validate(); err != nil {
 		return nil, err
 	}
-	account, err := s.repo.Save(domain.Account{
-		CustomerId:  req.CustomerId,
-		AccountType: req.AccountType,
-		OpeningDate: time.Now().Format("2006-01-02 15:04:05"),
-		Amount:      req.Amount,
-		Status:      "1",
-	})
-	if err != nil {
+	if account, err := s.repo.Save(domain.NewAccount(
+		req.CustomerId,
+		req.AccountType,
+		req.Amount,
+	)); err != nil {
 		return nil, err
+	} else {
+		return account.ToNewAccountResponseDto(), nil
 	}
-
-	response := account.ToNewAccountResponseDto()
-
-	return &response, nil
 }
 
 func (s DefaultAccountService) MakeTransaction(req dto.TransactionRequest) (*dto.TransactionResponse, *errs.AppError) {
