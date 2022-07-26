@@ -3,8 +3,8 @@ package domain
 import (
 	"time"
 
+	"github.com/maxvidenin/banking-lib/errs"
 	"github.com/maxvidenin/banking/dto"
-	"github.com/maxvidenin/banking/errs"
 )
 
 type Account struct {

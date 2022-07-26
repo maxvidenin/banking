@@ -4,8 +4,8 @@ import (
 	"database/sql"
 
 	"github.com/jmoiron/sqlx"
-	"github.com/maxvidenin/banking/errs"
-	"github.com/maxvidenin/banking/logger"
+	"github.com/maxvidenin/banking-lib/errs"
+	"github.com/maxvidenin/banking-lib/logger"
 
 	_ "github.com/go-sql-driver/mysql"
 )

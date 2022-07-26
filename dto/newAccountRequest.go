@@ -3,7 +3,7 @@ package dto
 import (
 	"strings"
 
-	"github.com/maxvidenin/banking/errs"
+	"github.com/maxvidenin/banking-lib/errs"
 )
 
 type NewAccountRequest struct {

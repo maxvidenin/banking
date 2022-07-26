@@ -9,7 +9,7 @@ import (
 
 	gomock "github.com/golang/mock/gomock"
 	dto "github.com/maxvidenin/banking/dto"
-	errs "github.com/maxvidenin/banking/errs"
+	errs "github.com/maxvidenin/banking-lib/errs"
 )
 
 // MockCustomerService is a mock of CustomerService interface.

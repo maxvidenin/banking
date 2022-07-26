@@ -9,7 +9,7 @@ import (
 
 	gomock "github.com/golang/mock/gomock"
 	domain "github.com/maxvidenin/banking/domain"
-	errs "github.com/maxvidenin/banking/errs"
+	errs "github.com/maxvidenin/banking-lib/errs"
 )
 
 // MockAccountRepository is a mock of AccountRepository interface.

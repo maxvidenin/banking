@@ -1,6 +1,6 @@
 package dto
 
-import "github.com/maxvidenin/banking/errs"
+import "github.com/maxvidenin/banking-lib/errs"
 
 const Withdrawal = "withdrawal"
 const Deposit = "deposit"

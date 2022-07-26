@@ -1,9 +1,9 @@
 package service
 
 import (
+	"github.com/maxvidenin/banking-lib/errs"
 	"github.com/maxvidenin/banking/domain"
 	"github.com/maxvidenin/banking/dto"
-	"github.com/maxvidenin/banking/errs"
 )
 
 type CustomerService interface {

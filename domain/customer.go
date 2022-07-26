@@ -1,8 +1,8 @@
 package domain
 
 import (
+	"github.com/maxvidenin/banking-lib/errs"
 	"github.com/maxvidenin/banking/dto"
-	"github.com/maxvidenin/banking/errs"
 )
 
 type Customer struct {

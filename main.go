@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/maxvidenin/banking-lib/logger"
 	"github.com/maxvidenin/banking/app"
-	"github.com/maxvidenin/banking/logger"
 )
 
 func main() {

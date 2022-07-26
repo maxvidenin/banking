@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/maxvidenin/banking/logger"
+	"github.com/maxvidenin/banking-lib/logger"
 )
 
 type AuthRepository interface {
